@@ -6,10 +6,10 @@
  * NomExpediteurMail = "QSF Admin"
  * AdresseExpediteurMail = 
  * 
- * define ("HOST", "")
+ * define ("HOST", "localhost")
  * define ("LOGIN", "root")
  * define ("PORT", "3306")
- * define ("PASS", " ")
+ * define ("PASS", "")
  * define ("BD", "talentland")
  */
 ?>
