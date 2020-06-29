@@ -22,7 +22,7 @@
           
           <form  method="get">
           <?php
-           require_once $_SESSION["APPLICATION"].'/FONCTIONNAILITE/Fonctions(SupprimerApres).php';
+           require_once $_SESSION["APPLICATION"].'/FONCTIONCOMMUN/fonctionutile.php';
            
             if (empty($_SESSION['email'])){
                 echo ('<div class="btn-group" role="group" aria-label="Basic example">');

@@ -6,9 +6,9 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
 
 <!doctype html>
 <html lang="en">
-  <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNAILITE/header.php'; ?>
+  <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/header.php'; ?>
   <body>
-  <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNAILITE/nav.php'; ?>
+  <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/nav.php'; ?>
 <!--------------------------------------------------------------------------------------------------------------------------------------------->
         <div class="jumbotron">
           <div class="container">
