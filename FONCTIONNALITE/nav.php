@@ -1,22 +1,23 @@
- <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="Accueil.php">Quai des savoir-faire</a>
+<?php session_start(); ?>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+       <?php  echo('<a class="navbar-brand" href="'.$_SESSION["APPLICATION"].'FONCTIONNALITE/ACCUEIL/index.php'.'">Quai des savoir-faire</a>'); ?>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="Accueil.php">Accueil<span class="sr-only">(current)</span></a>
+             <?php  echo('<a class="nav-link" href="'.$_SESSION["APPLICATION"].'FONCTIONNALITE/ACCUEIL/index.php'.'">Accueil<span class="sr-only">(current)</span></a>');  ?>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Besoin.php">Besoins</a>
+            <?php echo('<a class="nav-link" href="'.$_SESSION["APPLICATION"].'FONCTIONNALITE/BESOIN/besoin.html.php'.'">Besoins</a> '); ?>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Talent.php">Talents</a>
+            <?php echo('<a class="nav-link" href="'.$_SESSION["APPLICATION"].'FONCTIONNALITE/TALENT/talent.html.php'.'">Talents</a>'); ?>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="AbonnerCategorie.php">Catégories</a>
+            <?php echo('<a class="nav-link" href="'.$_SESSION["APPLICATION"].'FONCTIONNALITE/CATEGORIE/.html.php'.'">Catégories</a>');  ?>
           </li>  
         </ul>
           
@@ -52,9 +53,9 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <?php
                 if(isset($_SESSION['email'])){
-                    echo ('<a class="dropdown-item" href="MonProfil.php">Mon profil</a>');
-                    echo ('<a class="dropdown-item" href="MesCategories.php">Mes catégories</a>');
-                    echo ('<a class="dropdown-item" href="Deconnecter.php" onclick="Deconnexion()">Déconnecter</a>');
+                    echo ('<a class="dropdown-item" href="'.$_SESSION["APPLICATION"].'FONCTIONNALITE/MONESPACE/monprofil.html.php'.'">Mon profil</a>');
+                    echo ('<a class="dropdown-item" href="'.$_SESSION["APPLICATION"].'FONCTIONNALITE/MONESPACE/mescategories.html.php'.'">Mes catégories</a>');
+                    echo ('<a class="dropdown-item" href="'.$_SESSION["APPLICATION"].'FONCTIONNALITE/INSCRIPTION/deconnexion.php'.'" onclick="Deconnexion()">Déconnecter</a>');
                 ?>
                     <script>
                         function Deconnexion() {
@@ -63,8 +64,8 @@
                     </script>
                 <?php
                 } else {
-                    echo ('<a class="dropdown-item" href="Login.php">Se connecter</a>');
-                    echo ('<a class="dropdown-item" href="Inscription.php">S\'inscrire</a>');
+                    echo ('<a class="dropdown-item" href="'.$_SESSION["APPLICATION"].'FONCTIONNALITE/INSCRIPTION/connexion.html.php'.'">Se connecter</a>');
+                    echo ('<a class="dropdown-item" href="'.$_SESSION["APPLICATION"].'FONCTIONNALITE/INSCRIPTION/inscription.html.php'.'">S\'inscrire</a>');
                 }
                 ?>
             </div>

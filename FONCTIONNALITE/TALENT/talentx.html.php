@@ -1,75 +1,9 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        ​
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        ​	<link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <title>Quai des savoir-faire</title>
-
-        <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
+    <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/header.php'; ?>
     <body>
-        <nav class="navbar sticky-top navbar-dark bg-dark">
-          <a class="navbar-brand" href="Accueil.php">Quai des savoir-faire</a>
-
-        <div class="dropdown">
-          <?php
-            require_once('Fonctions.php');
-          ?>
-          
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="Login.php">Se connecter</a>
-            <a class="dropdown-item" href="Inscription.php">S'inscrire</a>
-            <a class="dropdown-item" href="Deconnecter.php">Déconnecter</a>
-            <?php
-            require_once('Fonctions.php');
-            
-            if(isset($_SESSION['email'])){
-                echo ('<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon espace</a>');
-                echo ('<div class="dropdown-menu">');
-                echo ('<a class="dropdown-item" href="MonProfil.php">Mon profil</a>');
-                echo ('<a class="dropdown-item" href="MesCategories.php">Mes catégories</a>');
-                echo ('</div>');
-            }
-            ?>
-          </div>
-        </div>
-
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="navbar-toggler-icon"></span>
-	      </button>
-
-	      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	        <ul class="navbar-nav mr-auto">
-	          <li class="nav-item">
-	            <a class="nav-link" href="Besoin.php">Besoins</a>
-	          </li>
-	          <li class="nav-item">
-	            <a class="nav-link" href="Talent.php">Talents</a>
-	          </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="AbonnerCategorie.php">Catégories</a>
-	          </li>
-	          <!--<li class="nav-item">
-	            <a class="nav-link" href="#">Cours et Forum</a>
-	          </li>
-	          <li class="nav-item">
-	            <a class="nav-link" href="#">Projet Associatif</a>
-	          </li
-	          <li class="nav-item">
-	            <a class="nav-link" href="#">Contacts</a>
-	          </li>-->
-                  <li class="nav-item">
-                      <a class="nav-link" href="ConditionGeneraleUtilisation.php">Mentions Légales</a>
-	          </li>
-	        </ul>
-	      </div>
-        </nav>
+    <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/nav.php'; ?>
 <!--------------------------------------------------------------------------------------------------------------------------------------------->
         <div class="jumbotron">
             <div class="container">
@@ -97,9 +31,7 @@
                 ?>     
             </div>
         </div>
-        <footer>
-            <p id="copyright"><em><small>copyright &#9400; Quai des savoir-faire, CPAM Haute-Garonne, 2020. All rights reserved.</small></em></p>
-        </footer>
+        <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNAILITE/footer.php'; ?>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

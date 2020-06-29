@@ -23,6 +23,8 @@
                             echo ("Cette base n'existe pas</br>");
                     }  
          }
+          
+         
 
         // 2. Fonction vérification l'existnce d'email       
             
@@ -38,7 +40,7 @@
             }
         
         // 3. Session utilisateur
-            session_start();
+            // session_start();  // on le garde pas ?
          
         // 4. Session actuelle : récuperer le code utilisateur   
             if (isset($_SESSION['email'])) {

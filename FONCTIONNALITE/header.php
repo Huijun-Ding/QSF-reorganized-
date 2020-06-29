@@ -1,5 +1,4 @@
-
-  <head>
+ <head>
   <?php require_once $_SESSION["APPLICATION"].'/BDD/connexion.bdd.php';  // Connexion de la base de données ?>
   
     <!--Required meta tags -->
@@ -14,7 +13,7 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="jquery.js"></script>
-    <script src="pagination.js"></script>
+  
  
   </head>
 
