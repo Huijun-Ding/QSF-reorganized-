@@ -41,30 +41,8 @@
                   ?>      
                     </div>
                 </div>
-                <script>
-                    function ToutDesabonner() {
-                        var parent = document.getElementById("parent1");
-                        var label = document.getElementById("label1");
-                        var input = document.getElementsByTagName("input");
+                <script src="toutabonner.js"></script>
 
-                        if (parent.checked === true) {
-                           for (var i = 0; i < input.length ; i ++) {
-                               if (input [i].type == "checkbox" && input[i].id == "Child_Checkbox1" && input[i].checked == false) {
-                                   input[i].checked = true ;
-                                   label.innerHTML = "Tout désabonnées";
-                               }
-                           }
-                        }
-                        else if (parent.checked === false) {
-                           for (var i = 0; i < input.length ; i ++) {
-                               if (input [i].type == "checkbox" && input[i].id == "Child_Checkbox1" && input[i].checked == true) {
-                                   input[i].checked = false ;
-                                   label.innerHTML = "Tout désabonner";
-                               }
-                           }
-                        }
-                    }
-                </script>
                 <div class="col-2">
                    <button type="submit" class="btn btn-dark">Désabonner</button> 
                 </div>          
@@ -111,30 +89,7 @@
                           ?>      
                     </div>
                 </div>
-                <script>
-                    function ToutAbonner() {
-                        var parent = document.getElementById("parent");
-                        var label = document.getElementById("label");
-                        var input = document.getElementsByTagName("input");
-
-                        if (parent.checked === true) {
-                           for (var i = 0; i < input.length ; i ++) {
-                               if (input [i].type == "checkbox" && input[i].id == "Child_Checkbox" && input[i].checked == false) {
-                                   input[i].checked = true ;
-                                   label.innerHTML = "Tout abonnées";
-                               }
-                           }
-                        }
-                        else if (parent.checked === false) {
-                           for (var i = 0; i < input.length ; i ++) {
-                               if (input [i].type == "checkbox" && input[i].id == "Child_Checkbox" && input[i].checked == true) {
-                                   input[i].checked = false ;
-                                   label.innerHTML = "Tout abonner";
-                               }
-                           }
-                        }
-                    }
-                </script>
+                
                 <div class="col-2">
             <div>           
                 <button type="submit" class="btn btn-dark">Abonner</button>
@@ -144,13 +99,7 @@
                         </form>
           </div>
         </div>
-    <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNAILITE/footer.php'; ?>
+    <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/footer.php'; ?>
  
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
