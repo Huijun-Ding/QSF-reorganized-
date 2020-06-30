@@ -1,9 +1,8 @@
 <?php
-
+session_start();
 define("REP_APPLI","/QSF-reorganized-");
 $_SESSION["REP_APPLI"] = REP_APPLI;
 $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
-
 ?>
 
 <!doctype html>
@@ -50,8 +49,7 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
    
             <div id="cartesB" class="flex-parent d-flex flex-wrap justify-content-around mt-3">     
             <?php
-            require_once('Fonctions.php');
-
+     
             if(isset($_SESSION['email']) and ($_SESSION['type']) != NULL) {  
                 $query = "select  b.CodeB, b.VisibiliteB, b.TitreB, c.PhotoC, b.DateButoireB, b.TypeB from besoins b, categories c where b.CodeC = c.CodeC and (b.TypeB = '{$_SESSION['type']}' OR b.TypeB ='Pro et Perso') order by CodeB DESC";
             } elseif (isset($_GET['typeV'])){    
@@ -325,7 +323,7 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
             </div>
 ------------------------------------------------------------------------------------------------------------------------------------------->
         <hr/>    
-        <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNAILITE/footer.php'; ?>
+        <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/footer.php'; ?>
 
 
     <!-- Optional JavaScript -->
