@@ -1,17 +1,21 @@
 <?php
-    require_once $_SESSION["APPLICATION"].'/BDD/connexion.bdd.php';
+
 
     function afficher_besoins() {
-        $requete = $bdd -> query("select b.CodeB, b.VisibiliteB, b.TitreB, c.PhotoC, b.DateButoireB, b.TypeB from besoins b, categories c where b.CodeC = c.CodeC order by CodeB DESC");
+        
+        $bdd = connect();
+        
+        $requete = $bdd->query("select b.CodeB, b.VisibiliteB, b.TitreB, c.PhotoC, b.DateButoireB, b.TypeB from besoins b, categories c where b.CodeC = c.CodeC order by CodeB DESC");
         
         while ($resultat = $requete ->fetch()) {
-             if ($ligne["VisibiliteB"] == 1) {   
-                            if ($ligne["TypeB"] == 'Pro et Perso') {
-                                echo ('<div><h5><span class="badge badge-info">'.$ligne["TypeB"].'</span></h5>');
-                            } elseif ($ligne["TypeB"] == 'Pro') {
-                                echo ('<div><h5><span class="badge badge-success">'.$ligne["TypeB"].'</span></h5>');
-                            } elseif ($ligne["TypeB"] == 'Perso') {
-                                echo ('<div><h5><span class="badge badge-warning">'.$ligne["TypeB"].'</span></h5>');
+             if ($resultat["VisibiliteB"] == 1) {   
+                 // Fonctions pour gérer les badges
+                            if ($resultat["TypeB"] == 'Pro et Perso') {
+                                echo ('<div><h5><span class="badge badge-info">'.$resultat["TypeB"].'</span></h5>');
+                            } elseif ($resultat["TypeB"] == 'Pro') {
+                                echo ('<div><h5><span class="badge badge-success">'.$resultat["TypeB"].'</span></h5>');
+                            } elseif ($resultat["TypeB"] == 'Perso') {
+                                echo ('<div><h5><span class="badge badge-warning">'.$resultat["TypeB"].'</span></h5>');
                             }               
             ?>
                             <div class="card" style="width: 12rem;">                                 
