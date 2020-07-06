@@ -11,7 +11,7 @@
     <title>Quai des savoir-faire</title>
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../STYLE/style.css">
     <script src="jquery.js"></script>
     
     <!-- Optional JavaScript -->

@@ -1,4 +1,5 @@
 <?php 
+
 $Titre = $_POST['type'].": ".$_POST['titre'];   // récupéré les valeurs selon la méthode POST
 $Description = $_POST['description'];
 $DateButoire = $_POST['datebutoire'];
