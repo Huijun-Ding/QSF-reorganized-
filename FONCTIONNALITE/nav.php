@@ -1,5 +1,3 @@
-
-
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="../ACCUEIL/index.php">Quai des savoir-faire</a> 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">');
@@ -25,6 +23,7 @@
           <form  method="get">
 <?php          
            require_once $_SESSION["APPLICATION"].'/FONCTIONCOMMUN/fonctionutile.php';
+         
            
             if (empty($_SESSION['email'])){
                 echo ('<div class="btn-group" role="group" aria-label="Basic example">');
@@ -74,11 +73,5 @@
         </ul>
       </div>
     </nav>
-
-
-
-<script>
-
-</script>
 
 
