@@ -1,11 +1,22 @@
 <?php
 
 
-    function afficher_besoins() {
+    function afficher_cartes_besoins() {
         
         $bdd = connect();
         
-        $requete = $bdd->query("select b.CodeB, b.VisibiliteB, b.TitreB, c.PhotoC, b.DateButoireB, b.TypeB from besoins b, categories c where b.CodeC = c.CodeC order by CodeB DESC");
+        if(isset($_SESSION['email']) and ($_SESSION['type']) != NULL) {  
+             $requete = $bdd->query("select  b.CodeB, b.VisibiliteB, b.TitreB, c.PhotoC, b.DateButoireB, b.TypeB from besoins b, categories c where b.CodeC = c.CodeC and (b.TypeB = '{$_SESSION['type']}' OR b.TypeB ='Pro et Perso') order by CodeB DESC");
+        } elseif (isset($_GET['typeV'])) {
+             $requete = $bdd->query("select  b.CodeB, b.VisibiliteB, b.TitreB, c.PhotoC, b.DateButoireB, b.TypeB from besoins b, categories c where b.CodeC = c.CodeC and (b.TypeB = '{$_GET['typeV']}' OR b.TypeB ='Pro et Perso') order by CodeB DESC");
+        } else {
+             $requete = $bdd->query("select b.CodeB, b.VisibiliteB, b.TitreB, c.PhotoC, b.DateButoireB, b.TypeB from besoins b, categories c where b.CodeC = c.CodeC order by CodeB DESC");
+        }
+        
+        if(isset($_GET['mot']) AND !empty($_GET['mot'])) {     /*Recherche par mot clé*/
+              $mot = htmlspecialchars($_GET['mot']);
+              $requete = $bdd->query("select b.CodeB, b.VisibiliteB, b.TitreB, c.PhotoC, b.DateButoireB, b.TypeB from besoins b, categories c where b.CodeC = c.CodeC and b.TitreB LIKE '%$mot%' order by b.CodeB DESC");
+          }
         
         while ($resultat = $requete ->fetch()) {
              if ($resultat["VisibiliteB"] == 1) {   
