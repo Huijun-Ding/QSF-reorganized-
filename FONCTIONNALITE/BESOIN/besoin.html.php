@@ -26,9 +26,8 @@
             </div>
           </div>
         </div>        
-                
+
         <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/footer.php'; ?>
 
-   
   </body>
 </html>
