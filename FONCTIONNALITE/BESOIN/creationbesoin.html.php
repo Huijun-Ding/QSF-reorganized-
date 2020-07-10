@@ -9,8 +9,9 @@
           <div class="container">
 			
             <h1> Creer un besoin </h1>
-            <form action="Saisir1Besoin.php" method="post">
+            <form action="besoin.html.php" method="post">
             <?php
+            //require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/BESOIN/besoin.fonction.php'; 
             require_once('Fonctions.php');
             date_default_timezone_set('Europe/Paris');
             echo "Date de création :   " . date("yy/m/d"); 

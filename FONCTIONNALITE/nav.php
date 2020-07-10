@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="../ACCUEIL/index.php">Quai des savoir-faire</a> 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">');
+      <a class="navbar-brand" href="../ACCUEIL/index.php">Quai des savoir-faire</a> 
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -35,22 +35,22 @@
  ?>         
           </form>
 
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropleft">
+        <ul class="navbar-nav ml-auto">          
+            <li class="nav-item dropleft">
           
 <?php              
             
             if(isset($_SESSION['email'])){
-                    echo('<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">');
-                    echo $_SESSION['email'];       // quand l'utiliateur n'a pas croché le case Anonyme au moment de l'inscription, on va afficher son adresse mail
-                    echo('</a>');
+                echo('<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">');
+                echo $_SESSION['email'];       // quand l'utiliateur n'a pas croché le case Anonyme au moment de l'inscription, on va afficher son adresse mail
+                echo('</a>');
             } else {
                 echo('<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">');
                 echo "Visiteur";                   //Utilisateur qui n'a pas conncté
                 echo('</a>');
             } 
  ?>          
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
  <?php                
                 if(isset($_SESSION['email'])){
                     echo ('<a class="dropdown-item" href="'.$_SESSION["APPLICATION"].'/FONCTIONNALITE/MONESPACE/monprofil.html.php'.'">Mon profil</a>');
@@ -68,8 +68,8 @@
                     echo ('<a class="dropdown-item" href="'.$_SESSION["APPLICATION"].'FONCTIONNALITE/INSCRIPTION/inscription.html.php'.'">S\'inscrire</a>');
                 }
   ?>                      
-            </div>
-          </li>
+                </div>
+            </li>
         </ul>
       </div>
     </nav>

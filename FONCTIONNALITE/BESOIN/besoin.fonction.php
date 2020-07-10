@@ -1,5 +1,19 @@
 <?php 
 
+   // 1. Tester si l'utilisateur est connecté avant créer un nouveau besoin
+/*
+            function login_pour_nouveau_besoin() {
+                if (isset($_SESSION['email'])) {
+                    echo ('<a href="Creer1Besoin.php"><button type="button" class="btn btn-light">Créer un nouveau besoin</button></a>');
+                } else {
+                    echo ('<a href="Login.php"><button type="button" class="btn btn-light">Créer un nouveau besoin</button></a>');
+                }
+            }
+*/
+
+
+//Créer un nouveau besoin
+
 $Titre = $_POST['type'].": ".$_POST['titre'];   // récupéré les valeurs selon la méthode POST
 $Description = $_POST['description'];
 $DateButoire = $_POST['datebutoire'];
