@@ -1,6 +1,6 @@
 <?php
         // Connexion à la base de donnée
-        $aConfig = parse_ini_file($_SESSION["APPLICATION"].'/config.php');
+        //$aConfig = parse_ini_file($_SESSION["APPLICATION"].'/config.php');
         //$mail->Host=$aConfig['SMTPHost'];
         //$mail->Port=$aConfig['SMTPPort'];
         //require_once $_SESSION["APPLICATION"].'/config.php';
