@@ -8,6 +8,14 @@
  * PASS = ""
  * BD = "talentland"
  * 
+ * [PDO] 
+ * define ("HOST","localhost"); 
+ * define ("LOGIN","root");
+ * define ("PORT","3306");
+ * define ("PASS","");
+ * define ("BD","talentland");
+ *  
+ * 
  *  * [Envoi de mail] 
  * SMTPHost =
  * SMTPPort =
