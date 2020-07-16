@@ -24,7 +24,7 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
              <?php
              require_once $_SESSION["APPLICATION"].'/FONCTIONCOMMUN/fonctionutile.php';
             
-            if(isset($_SESSION['email'])){
+            if(isset($_SESSION['email'])){  //arbre aide à la décision pour découvrir les talents
                 echo('<a href="https://eva.beta.gouv.fr/"><img src="https://i.pinimg.com/474x/81/c4/39/81c43990273687ad0218db03ed667d26.jpg" class="rounded-circle" alt="Bonhomme talent"></a>');
             } else {
                 echo ('<a href="Login.php"><img src="https://i.pinimg.com/474x/81/c4/39/81c43990273687ad0218db03ed667d26.jpg" class="rounded-circle" alt="Bonhomme talent"></a>');
@@ -38,6 +38,7 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
               <?php require_once $_SESSION["APPLICATION"].'/BDD/besoin.bdd.php'; ?>	
             <h1 id="titre1"><a href="../BESOIN/besoin.html.php" class="badge badge-light">Besoins</a></h1><br>
             <div class="flex-parent d-flex justify-content-md-between bd-highlight mb-2">
+              <!-- Moteur de recherche par mot clé-->
               <form method="GET" class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search"  name="motB" placeholder="Fitness/Excel/..." aria-label="Search">
                     <button type="submit" class="btn btn-outline-dark">Recherche</button>
@@ -49,11 +50,11 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
             </div>
    
             <div id="cartesB" class="flex-parent d-flex flex-wrap justify-content-around mt-3">     
-            <?php  afficher_cartes_besoins();   ?>           
+            <?php  afficher_cartes_besoins();  //bouton voir le détail en panne ?>           
             </div>
-           
+             <!-- La pagination pour les besoins-->
             <div id="page_navigation"> </div>
-            <script src="pagination.js"></script>
+            <script src="pagination.js"></script>      
          </div>
 <!--------------------------------------------------------------------------------------------------------------------------------------------->
           <div class="container" id="talents">
