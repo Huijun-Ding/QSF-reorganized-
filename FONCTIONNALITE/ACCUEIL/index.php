@@ -48,7 +48,7 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
                     mysqli_query ($session, $query);
                 ?>
             </div>
-   
+            <!-- L'affichage pour les cartes besoins-->
             <div id="cartesB" class="flex-parent d-flex flex-wrap justify-content-around mt-3">     
             <?php  afficher_cartes_besoins();  //bouton voir le détail en panne ?>           
             </div>
@@ -68,11 +68,11 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
               </form> 
               <?php is_login_new_talent(); ?>
             </div>
-
+            <!-- L'affichage pour les cartes talents-->
             <div id="cartesT" class="flex-parent d-flex flex-wrap justify-content-around mt-3">
-            <?php afficher_cartes_talents();   ?>                   
+            <?php afficher_cartes_talents();  //bouton voir le détail en panne  ?>                   
             </div>            
-
+            <!-- La pagination pour les talents-->
             <div id="page_navigation2"> </div>
           </div>      
 
