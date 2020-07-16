@@ -44,10 +44,9 @@
          if(isset($_GET['mot']) AND !empty($_GET['mot'])) {     /*Recherche par mot clé*/
                     $mot = htmlspecialchars($_GET['mot']);
                     if(isset($_SESSION['email']) and $_SESSION['type'] != NULL) {
-                        $requete = $bdd->query("");
-                        $query = "select c.NomC, b.CodeB, b.VisibiliteB, b.TitreB, c.PhotoC, b.DateButoireB, b.TypeB from besoins b, categories c where b.CodeC = c.CodeC and b.TitreB LIKE '%$mot%' and b.TypeB = '{$_SESSION['type']}' order by b.CodeB DESC";
+                        $requete = $bdd->query("select c.NomC, b.CodeB, b.VisibiliteB, b.TitreB, c.PhotoC, b.DateButoireB, b.TypeB from besoins b, categories c where b.CodeC = c.CodeC and b.TitreB LIKE '%$mot%' and b.TypeB = '{$_SESSION['type']}' order by b.CodeB DESC");
                     } else {
-                       $query = "select c.NomC, b.CodeB, b.VisibiliteB, b.TitreB, c.PhotoC, b.DateButoireB, b.TypeB from besoins b, categories c where b.CodeC = c.CodeC and b.TitreB LIKE '%$mot%' order by b.CodeB DESC";
+                        $requete = $bdd->query("select c.NomC, b.CodeB, b.VisibiliteB, b.TitreB, c.PhotoC, b.DateButoireB, b.TypeB from besoins b, categories c where b.CodeC = c.CodeC and b.TitreB LIKE '%$mot%' order by b.CodeB DESC");
                     }
                 }
         
@@ -67,7 +66,7 @@
                                 echo('<div class="card-body card text-center">');
                                 echo('<h5 class="card-title">'.$resultat['TitreB'].'</h5>');
                                 echo('<p class="card-text">Délais souhaité: '.$resultat['DateButoireB'].'</p>');
-                                echo('<a href="BesoinX.php?t='.$resultat['CodeB'].'" class="btn btn-outline-dark">Voir la demande</a>');
+                                echo('<a href="besoinx.html.php?t='.$resultat['CodeB'].'" class="btn btn-outline-dark">Voir la demande</a>');
                                 echo('</div>');
                                 echo('</div>');
                                 echo('</div>'); 
@@ -76,6 +75,36 @@
         } else {
             echo('<h5> Aucun résultat</h5>');
         }  
+    }
+    
+    function un_besoinx() {
+        
+          $bdd = connect();
+          
+          $requete = $bdd->query("select c.NomC, b.TypeB, b.VisibiliteB, b.TitreB, c.PhotoC, b.DatePublicationB, b.DescriptionB, b.DateButoireB from besoins b, categories c where b.CodeC = c.CodeC and b.CodeB = '{$_GET['t']}'");
+         
+          if ($requete == true) {
+            while ($resultat = $requete ->fetch()) {
+                 if ($resultat["VisibiliteB"] == 1) {                 
+                    echo ('<h1>'.$resultat["TitreB"]. '</h1>');                        
+                    echo ('<h3> Date Butoire: '.$resultat["DateButoireB"].'</h3>');
+                    echo ('<p> Date Publication: '.$resultat["DatePublicationB"].'</p>');
+                    echo ('<p><img src="'.$resultat["PhotoC"].'" class="card-img-top" alt="'.$resultat['NomC'].'" height="200" style="width: 20rem;"</p>');
+                    echo ('<p><strong>Type: </strong>'.$resultat["TypeB"].'</p>');                        
+                    echo ('<p><strong>Description</strong></p><p>'.$resultat["DescriptionB"].'</p>'); 
+                    echo ('<hr>');
+                    
+                    if(isset($_SESSION['email'])){
+                       echo ('<a href="mailbesoin.php?t='.$resultat["TitreB"].'"><button type="button" class="btn btn-dark btn-lg">Contacter</button></a>');
+                    } else {
+                       echo ('<a href="connexion.html.php"><button type="button" class="btn btn-dark btn-lg">Contacter</button></a>');
+                    }   
+                     
+                 }
+            } 
+           } else {
+               echo('<h5> Désolé, ce besoin ne peut pas être affiché. </h5>');   
+           }              
     }
  
     

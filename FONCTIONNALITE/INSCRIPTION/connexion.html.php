@@ -8,7 +8,6 @@
         <div class="jumbotron">
           <div class="container">
               <form class="form-signin" method = 'POST' action="IdentificationUtilisateur.php">
-
                   <center>
                     <h1 class="h3 mb-3 font-weight-normal">Login</h1>
                     <label for="inputEmail" class="sr-only" >Email address</label>
@@ -24,12 +23,9 @@
 		    <button class="btn btn-lg btn-dark btn-block" type="submit" style="width:40%">Se connecter</button>
                   </center>
               </form>
-
           </div>
         </div>
           <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/footer.php'; ?>
-
-   
   </body>
 </html>
 
