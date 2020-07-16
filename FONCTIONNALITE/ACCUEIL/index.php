@@ -6,7 +6,7 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/header.php'; ?>
   <body>
   <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/nav.php'; ?>
@@ -36,7 +36,7 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
 <!--------------------------------------------------------------------------------------------------------------------------------------------->
           <div class="container" id="besoins">
               <?php require_once $_SESSION["APPLICATION"].'/BDD/besoin.bdd.php'; ?>	
-            <h1 id="titre1"><a href="Besoin.php" class="badge badge-light">Besoins</a></h1><br>
+            <h1 id="titre1"><a href="../BESOIN/besoin.html.php" class="badge badge-light">Besoins</a></h1><br>
             <div class="flex-parent d-flex justify-content-md-between bd-highlight mb-2">
               <form method="GET" class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search"  name="motB" placeholder="Fitness/Excel/..." aria-label="Search">
@@ -58,7 +58,7 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
 <!--------------------------------------------------------------------------------------------------------------------------------------------->
           <div class="container" id="talents">
               <?php require_once $_SESSION["APPLICATION"].'/BDD/talent.bdd.php'; ?>	
-              <h1 id="titre2"><a href="Talent.php" class="badge badge-light">Talents</a></h1><br>
+              <h1 id="titre2"><a href="../TALENT/talent.html.php" class="badge badge-light">Talents</a></h1><br>
             <div class="flex-parent d-flex justify-content-md-between bd-highlight mb-2">
 
               <form method="GET" class="form-inline my-2 my-lg-0">

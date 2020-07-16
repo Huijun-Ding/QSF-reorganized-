@@ -1,6 +1,6 @@
 <?php
 
-    function afficher_cartes_talents() {
+    function afficher_cartes_talents() {  //fonction pour l'affichage des cartes besoins
 
            $bdd = connect();
 
@@ -76,7 +76,7 @@
            }  
        }
 
-    function un_talentx(){
+    function un_talentx(){   //fonction pour afficher les information d'un carte talent
         
           $bdd = connect();
           

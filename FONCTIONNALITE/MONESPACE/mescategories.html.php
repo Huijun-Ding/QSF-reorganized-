@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/header.php'; ?>
 <body>
     <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/nav.php'; ?>

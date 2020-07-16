@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/header.php';?>
   <body>
   <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/nav.php'; ?>
@@ -15,7 +15,7 @@
             </div>
             <hr>
             <div class="flex-parent d-flex justify-content-md-between bd-highlight mb-2">
-                <!-- Button trigger modal pour le filtrage-->
+                <!-- Button trigger modal pour le filtrage multiple-->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">  
                 三 Filtre
                 </button>
@@ -72,8 +72,6 @@
             </div>
           </div>
         </div>        
-
         <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/footer.php'; ?>
-
   </body>
 </html>

@@ -2,7 +2,7 @@
         // 1. Connexion à la base de donnée
         //header('Content-Type: text/html; charset=latin1_swedich_ci');
         
-        $nomlogin = 'root';                    // Ici, nous connectons avec le serveur local, si vous voulez le tester sur d'autre serveur, vous pouvez changer ces 3 variables
+        /*$nomlogin = 'root';                    // Ici, nous connectons avec le serveur local, si vous voulez le tester sur d'autre serveur, vous pouvez changer ces 3 variables
         $nompasswd = '';
         $nombase = 'talentland';
 
@@ -24,7 +24,7 @@
                     }  
          }
           
-         
+         */
 
         // 2. Fonction vérification l'existnce d'email       
             

@@ -1,6 +1,6 @@
 <?php
 
-    function afficher_cartes_besoins() {
+    function afficher_cartes_besoins() {  //fonction pour l'affichage des cartes besoins
         
         $bdd = connect();
         
@@ -77,7 +77,7 @@
         }  
     }
     
-    function un_besoinx() {
+    function un_besoinx() {  //fonction pour afficher les information d'un carte besoin
         
           $bdd = connect();
           
