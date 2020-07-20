@@ -3,36 +3,34 @@
 <html lang="fr">
   <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/header.php'; ?>
   <body>
-    <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/nav.php'; ?>
+   <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/nav.php'; ?>
 <!--------------------------------------------------------------------------------------------------------------------------------------------->   
         <div class="jumbotron">
-          <div class="container">
-			
+          <div class="container">    
             <h1> Creer un besoin </h1>
             <form action="besoin.html.php" method="post">
             <?php
             //require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/BESOIN/besoin.fonction.php'; 
-            require_once('Fonctions.php');
             date_default_timezone_set('Europe/Paris');
-            echo "Date de création :   " . date("yy/m/d"); 
+            echo "Date de création :   " . date("d/m/yy");   // Afficher le jour de la création 
             ?>
             <div class="form-row align-items-center">
-                    <div class="col-auto my-1">
-                      <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                      <select class="custom-select mr-sm-2" name="categorie" id="inlineFormCustomSelect" required>
-                            <option value="" selected>Choisir une catégorie</option>
-                            <option value="1" name="categorie" title="...">Sport</option>
-                            <option value="2" name="categorie" title="Réunions créatives/Pitcher .....">Animation</option>
-                            <option value="3" name="categorie"title="...">Outils métiers</option>
-                            <option value="4" name="categorie" title="Yoga, méditation...">Développement personnel</option>
-                            <option value="5" name="categorie" title="...">Associatif</option>
-                            <option value="6" name="categorie" title="...">Covoiturage</option>
-                            <option value="7" name="categorie" title="Word, Excel, PowerPoint, Outlook...">Bureautique</option>
-                            <option value="8" name="categorie" title="Internet, site Web, réparation PC...">Informatique</option>
-                            <option value="9" name="categorie" title="Cuisine, bricolage, musique, théâtre, ciné, culture, philatélie, généalogie...">Loisir </option>
-                            <option value="10" name="categorie" title="Demande de créér une catégorie à l'administrateur">Autres </option>
-                      </select>
-                    </div><p>(<span style="color:red">*</span>)</p>
+                <div class="col-auto my-1">
+                  <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                  <select class="custom-select mr-sm-2" name="categorie" id="inlineFormCustomSelect" required>
+                        <option value="" selected>Choisir une catégorie</option>
+                        <option value="1" name="categorie" title="...">Sport</option>
+                        <option value="2" name="categorie" title="Réunions créatives/Pitcher .....">Animation</option>
+                        <option value="3" name="categorie"title="...">Outils métiers</option>
+                        <option value="4" name="categorie" title="Yoga, méditation...">Développement personnel</option>
+                        <option value="5" name="categorie" title="...">Associatif</option>
+                        <option value="6" name="categorie" title="...">Covoiturage</option>
+                        <option value="7" name="categorie" title="Word, Excel, PowerPoint, Outlook...">Bureautique</option>
+                        <option value="8" name="categorie" title="Internet, site Web, réparation PC...">Informatique</option>
+                        <option value="9" name="categorie" title="Cuisine, bricolage, musique, théâtre, ciné, culture, philatélie, généalogie...">Loisir </option>
+                        <option value="10" name="categorie" title="Demande de créér une catégorie à l'administrateur">Autres </option>
+                  </select>
+                </div><p>(<span style="color:red">*</span>)</p>
             </div>
             <div class="form-group">
               <label for="inputEmail4">Titre(<span style="color:red">*</span>)</label>

@@ -11,7 +11,6 @@
             }
 */
 
-
 //Créer un nouveau besoin
 
 $Titre = $_POST['type'].": ".$_POST['titre'];   // récupéré les valeurs selon la méthode POST
@@ -22,7 +21,7 @@ $DatePublicationB = date("yy/m/d");
 $Satisfaisant = false;
 $Categorie = $_POST['categorie'];
 
-require_once('Fonctions.php');
+//require_once('Fonctions.php');
 
 $stmt = mysqli_prepare($session, "INSERT INTO besoins(TitreB,DescriptionB,DateButoireB,SatisfisantB,DatePublicationB,TypeB,CodeC) VALUES(?,?,?,?,?,?,?)");  //insérer un nouveau besoin dans le table besoins
 mysqli_stmt_bind_param($stmt, 'sssissi', $Titre, $Description, $DateButoire, $Satisfaisant, $DatePublicationB, $Type, $Categorie);
