@@ -44,9 +44,9 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
                     <input class="form-control mr-sm-2" type="search"  name="motB" placeholder="Fitness/Excel/..." aria-label="Search">
                     <button type="submit" class="btn btn-outline-dark">Recherche</button>
               </form> 
-              <?php is_login_new_besoin(); 
-                    $query = "UPDATE besoins SET VisibiliteB = 0 WHERE CURDATE() > DateButoireB";
-                    mysqli_query ($session, $query);
+              <?php //is_login_new_besoin(); 
+                    //$query = "UPDATE besoins SET VisibiliteB = 0 WHERE CURDATE() > DateButoireB";
+                    //mysqli_query ($session, $query);
                 ?>
             </div>
             <!-- L'affichage pour les cartes besoins-->

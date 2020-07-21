@@ -13,6 +13,7 @@
                     //2ème méthode
                     //require_once $_SESSION["APPLICATION"].'/config.php';
                     //$bdd = new PDO("mysql:host=.HOST.;dbname=.BD.;charset=utf8",".LOGIN.",".PASS.");
+                    
                     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $bdd->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
                     return $bdd;
@@ -21,7 +22,6 @@
                 }      
         }
         
-
 ?>
 
 
