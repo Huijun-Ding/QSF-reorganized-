@@ -13,10 +13,10 @@ if(isset($_POST['email'])){
     mysqli_stmt_bind_result($stmt, $good_password);
     mysqli_stmt_fetch($stmt);
 
-    //echo $Password;
-    //echo $good_password;
 
-    if(password_verify($Password,$good_password)) {    // si le mot de passe est bon, ouvert la session
+    if(password_verify($Password,$good_password)) {    // si le mot de passe est bon, ouvert la session ???
+        
+        session_name('UTILISATEUR');
         session_start();
 
             $_SESSION['email'] = $Email;

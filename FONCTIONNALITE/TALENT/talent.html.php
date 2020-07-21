@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_name('CHEMIN'); session_start(); ?>
 <!doctype html>
 <html lang="fr">
    <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/header.php'; ?>
