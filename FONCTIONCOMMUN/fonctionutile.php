@@ -1,31 +1,6 @@
 <?php
-        // 1. Connexion à la base de donnée
         //header('Content-Type: text/html; charset=latin1_swedich_ci');
         
-        /*$nomlogin = 'root';                    // Ici, nous connectons avec le serveur local, si vous voulez le tester sur d'autre serveur, vous pouvez changer ces 3 variables
-        $nompasswd = '';
-        $nombase = 'talentland';
-
-        $session = mysqli_connect('localhost', $nomlogin, $nompasswd ); 
-
-        if ($session == NULL) // Test de connexion n'est pas réussié
-          {
-                  echo ("<p>Echec de connection</p>");
-          } 
-        else 
-         {
-                // Sélection de la base de donnée
-                 if (mysqli_select_db($session, $nombase) == TRUE) { 
-                            //echo ("Connection Réussite</br>");
-            }
-                else 
-             {
-                            echo ("Cette base n'existe pas</br>");
-                    }  
-         }
-          
-         */
-
         // 2. Fonction vérification l'existnce d'email       
             
             function is_unique_login($session, $Email){
@@ -39,8 +14,7 @@
                 }
             }
         
-        // 3. Session utilisateur
-            // session_start();  // on le garde pas ?
+
          
         // 4. Session actuelle : récuperer le code utilisateur   
             if (isset($_SESSION['email'])) {
@@ -59,10 +33,7 @@
                     $_SESSION['type'] = $type['TypeU'];
                 }  
             } 
-  
-      
-      
-            
+     
          // 6. Tester si l'utilisateur est connecté avant saisir un nouveau besoin/talent
             function is_login_new_talent() {
                 if (isset($_SESSION['email'])) {

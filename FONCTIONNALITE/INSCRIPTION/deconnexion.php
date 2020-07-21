@@ -1,6 +1,6 @@
 <?php
     session_start();
     session_destroy();
-    header('location: Accueil.php');
+    header('location: '.$_SESSION['APPLICATION'].'/FONCTIONNALITE/ACCUEIL/index.php');
     exit;
 ?>

@@ -8,7 +8,7 @@
         <div class="jumbotron">
           <div class="container">    
             <h1> Creer un besoin </h1>
-            <form action="besoin.html.php" method="post">
+            <form action="besoin.fonction.php" method="post">
             <?php
             //require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/BESOIN/besoin.fonction.php'; 
             date_default_timezone_set('Europe/Paris');

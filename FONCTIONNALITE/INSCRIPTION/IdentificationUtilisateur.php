@@ -22,7 +22,7 @@ if(isset($_POST['email'])){
             $_SESSION['email'] = $Email;
             $_SESSION['password'] = $Password;
 
-        header("Location: Accueil.php");
+        header('Location: '.$_SESSION['APPLICATION'].'/FONCTIONNALITE/ACCUEIL/index.php');
 
         // Envoyer un mail, mais on ne peut pas tester en utilisant un serveur local
 
