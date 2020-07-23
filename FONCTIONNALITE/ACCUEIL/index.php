@@ -4,6 +4,10 @@ session_start();
 define("REP_APPLI","/QSF-reorganized-");
 $_SESSION["REP_APPLI"] = REP_APPLI;
 $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
+
+echo '<pre>';
+print_r($_SERVER);
+echo '</pre>';
 ?>
 
 <!doctype html>
