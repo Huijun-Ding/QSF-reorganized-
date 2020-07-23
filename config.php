@@ -1,4 +1,4 @@
-<?php
+<?php 
 /*
 [PDO] 
 HOST="localhost"
@@ -8,3 +8,7 @@ PASS=""
 BD="talentland"
 */
 ?>
+ 
+ 
+
+
