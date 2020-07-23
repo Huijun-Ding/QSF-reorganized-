@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="../ACCUEIL/index.php">Quai des savoir-faire</a> 
+      <a class="navbar-brand" href="http://<?php echo $_SERVER['HTTP_HOST'].$_SESSION['REP_APPLI'];?>/FONCTIONNALITE/ACCUEIL/index.php">Quai des savoir-faire</a> 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
@@ -7,16 +7,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-              <a class="nav-link" href="../ACCUEIL/index.php">Accueil<span class="sr-only">(current)</span></a> 
+              <a class="nav-link" href="http://<?php echo $_SERVER['HTTP_HOST'].$_SESSION['REP_APPLI'];?>/FONCTIONNALITE/ACCUEIL/index.php">Accueil<span class="sr-only">(current)</span></a> 
           </li>
           <li class="nav-item">
-             <a class="nav-link" href="../BESOIN/besoin.html.php">Besoins</a>
+             <a class="nav-link" href="http://<?php echo $_SERVER['HTTP_HOST'].$_SESSION['REP_APPLI'];?>/FONCTIONNALITE/BESOIN/besoin.html.php">Besoins</a>
              </li>
           <li class="nav-item">
-             <a class="nav-link" href="../TALENT/talent.html.php">Talents</a>
+             <a class="nav-link" href="http://<?php echo $_SERVER['HTTP_HOST'].$_SESSION['REP_APPLI'];?>/FONCTIONNALITE/TALENT/talent.html.php">Talents</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../CATEGORIE/categorie.html.php">Catégories</a>
+            <a class="nav-link" href="http://<?php echo $_SERVER['HTTP_HOST'].$_SESSION['REP_APPLI'];?>/FONCTIONNALITE/CATEGORIE/categorie.html.php">Catégories</a>
           </li>
         </ul>
         
@@ -53,9 +53,9 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
  <?php                
                 if(isset($_SESSION['email'])){
-                    echo ('<a class="dropdown-item" href="'.$_SESSION["APPLICATION"].'/FONCTIONNALITE/MONESPACE/monprofil.html.php'.'">Mon profil</a>');
-                    echo ('<a class="dropdown-item" href="'.$_SESSION["APPLICATION"].'/FONCTIONNALITE/MONESPACE/mescategories.html.php'.'">Mes catégories</a>');
-                    echo ('<a class="dropdown-item" href="'.$_SESSION["APPLICATION"].'/FONCTIONNALITE/INSCRIPTION/deconnexion.php'.'" onclick="Deconnexion()">Déconnecter</a>');
+                    echo ('<a class="dropdown-item" href="http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['REP_APPLI'].'/FONCTIONNALITE/MONESPACE/monprofil.html.php">Mon profil</a>');
+                    echo ('<a class="dropdown-item" href="http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['REP_APPLI'].'/FONCTIONNALITE/MONESPACE/mescategories.html.php">Mes catégories</a>');
+                    echo ('<a class="dropdown-item" href="http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['REP_APPLI'].'/FONCTIONNALITE/INSCRIPTION/deconnexion.php" onclick="Deconnexion()">Déconnecter</a>');
  ?>              
                     <script>
                         function Deconnexion() {
@@ -64,8 +64,8 @@
                     </script>
  <?php             
                 } else {
-                    echo ('<a class="dropdown-item" href="'.$_SESSION["APPLICATION"].'FONCTIONNALITE/INSCRIPTION/connexion.html.php'.'">Se connecter</a>');
-                    echo ('<a class="dropdown-item" href="'.$_SESSION["APPLICATION"].'FONCTIONNALITE/INSCRIPTION/inscription.html.php'.'">S\'inscrire</a>');
+                    echo ('<a class="dropdown-item" href="http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['REP_APPLI'].'/FONCTIONNALITE/INSCRIPTION/connexion.html.php">Se connecter</a>');
+                    echo ('<a class="dropdown-item" href="http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['REP_APPLI'].'/FONCTIONNALITE/INSCRIPTION/inscription.html.php">S\'inscrire</a>');
                 }
   ?>                      
                 </div>

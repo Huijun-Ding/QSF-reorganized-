@@ -32,7 +32,7 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
             if(isset($_SESSION['email'])){  //arbre aide à la décision pour découvrir les talents
                 echo('<a href="https://eva.beta.gouv.fr/"><img src="https://i.pinimg.com/474x/81/c4/39/81c43990273687ad0218db03ed667d26.jpg" class="rounded-circle" alt="Bonhomme talent"></a>');
             } else {
-                echo ('<a href="'.$_SESSION['APPLICATION'].'/FONCTIONNALITE/INSCRIPTION/connexion.html.php'.'"><img src="https://i.pinimg.com/474x/81/c4/39/81c43990273687ad0218db03ed667d26.jpg" class="rounded-circle" alt="Bonhomme talent"></a>');
+                echo ('<a href="http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['REP_APPLI'].'/FONCTIONNALITE/INSCRIPTION/connexion.html.php"><img src="https://i.pinimg.com/474x/81/c4/39/81c43990273687ad0218db03ed667d26.jpg" class="rounded-circle" alt="Bonhomme talent"></a>');
             }
             ?>
              </div>
@@ -55,7 +55,7 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
             </div>
             <!-- L'affichage pour les cartes besoins-->
             <div id="cartesB" class="flex-parent d-flex flex-wrap justify-content-around mt-3">     
-            <?php  afficher_cartes_besoins();  //bouton voir le détail en panne ?>           
+            <?php  afficher_cartes_besoins();  ?>           
             </div>
              <!-- La pagination pour les besoins-->
             <div id="page_navigation"> </div>
@@ -75,7 +75,7 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
             </div>
             <!-- L'affichage pour les cartes talents-->
             <div id="cartesT" class="flex-parent d-flex flex-wrap justify-content-around mt-3">
-            <?php afficher_cartes_talents();  //bouton voir le détail en panne  ?>                   
+            <?php afficher_cartes_talents();   ?>                   
             </div>            
             <!-- La pagination pour les talents-->
             <div id="page_navigation2"> </div>

@@ -67,7 +67,7 @@
                                 echo('<h5 class="card-title">'.$resultat['TitreB'].'</h5>');
                                 echo('<p class="card-text">Délais souhaité: '.$resultat['DateButoireB'].'</p>');
                                 //$_SESSION dans href pour le chemin ???
-                                echo('<a href="'.$_SESSION['APPLICATION'].'/FONCTIONNALITE/BESOIN/besoinx.html.php?t='.$resultat['CodeB'].'" class="btn btn-outline-dark">Voir la demande</a>');
+                                echo('<a href="http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['REP_APPLI'].'/FONCTIONNALITE/BESOIN/besoinx.html.php?t='.$resultat['CodeB'].'" class="btn btn-outline-dark">Voir la demande</a>');
                                 echo('</div>');
                                 echo('</div>');
                                 echo('</div>'); 
