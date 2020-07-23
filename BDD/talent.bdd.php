@@ -65,7 +65,7 @@
                                    echo('<img src="'.$resultat['PhotoC'].'" class="card-img-top" alt="'.$resultat['NomC'].'">');
                                    echo('<div class="card-body card text-center">');
                                    echo('<h5 class="card-title">'.$resultat['TitreT'].'</h5>');
-                                   echo('<a href="talentx.html.php?t='.$resultat['CodeT'].'" class="btn btn-outline-dark">Voir la demande</a>');
+                                   echo('<a href="http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['REP_APPLI'].'/FONCTIONNALITE/TALENT/talentx.html.php?t='.$resultat['CodeT'].'" class="btn btn-outline-dark">Voir la demande</a>');
                                    echo('</div>');
                                    echo('</div>');
                                    echo('</div>'); 
@@ -95,7 +95,7 @@
                     if(isset($_SESSION['email'])){
                        echo ('<a href="mailtalent.php?t='.$resultat["TitreT"].'"><button type="button" class="btn btn-dark btn-lg">Contacter</button></a>');
                     } else {
-                       echo ('<a href="connexion.html.php"><button type="button" class="btn btn-dark btn-lg">Contacter</button></a>');
+                       echo ('<a href="http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['REP_APPLI'].'/FONCTIONNALITE/INSCRIPTION/connexion.html.php"><button type="button" class="btn btn-dark btn-lg">Contacter</button></a>');
                     }   
                      
                  }

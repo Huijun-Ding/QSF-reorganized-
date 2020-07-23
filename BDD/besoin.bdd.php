@@ -98,7 +98,7 @@
                     if(isset($_SESSION['email'])){
                        echo ('<a href="mailbesoin.php?t='.$resultat["TitreB"].'"><button type="button" class="btn btn-dark btn-lg">Contacter</button></a>');
                     } else {
-                       echo ('<a href="connexion.html.php"><button type="button" class="btn btn-dark btn-lg">Contacter</button></a>');
+                       echo ('<a href="http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['REP_APPLI'].'/FONCTIONNALITE/INSCRIPTION/connexion.html.php"><button type="button" class="btn btn-dark btn-lg">Contacter</button></a>');
                     }   
                      
                  }
