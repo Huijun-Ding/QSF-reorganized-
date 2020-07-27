@@ -13,7 +13,11 @@
 
             $requete = $bdd->query("SELECT MotDePasse FROM utilisateurs WHERE Email= '$Email'");
 
-            $resultat = $requete ->fetch();
+            $resultat = $requete ->fetch($good_password);
+            //comment traduire 
+            //mysqli_stmt_bind_result($stmt, $good_password);
+            //mysqli_stmt_fetch($stmt);
+ 
 
             if(password_verify($Password,$good_password)) {    // si le mot de passe est bon, ouvert la session ???
 
