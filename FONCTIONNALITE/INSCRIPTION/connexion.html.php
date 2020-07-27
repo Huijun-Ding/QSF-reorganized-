@@ -7,7 +7,7 @@
 <!--------------------------------------------------------------------------------------------------------------------------------------------->   
         <div class="jumbotron">
           <div class="container">
-              <form class="form-signin" method = 'POST' action="IdentificationUtilisateur.php">
+              <form class="form-signin" method = 'POST' action="inscription.fonction.php">
                   <center>
                     <h1 class="h3 mb-3 font-weight-normal">Login</h1>
                     <label for="inputEmail" class="sr-only" >Email address</label>
@@ -20,7 +20,7 @@
                               <p> <a href="Inscription.php" target="_blank"> S'inscrire <a> </p>
                             </label>
                     </div>
-		    <button class="btn btn-lg btn-dark btn-block" type="submit" style="width:40%">Se connecter</button>
+		    <button class="btn btn-lg btn-dark btn-block" name="seconnecter" type="submit" style="width:40%">Se connecter</button>
                   </center>
               </form>
           </div>

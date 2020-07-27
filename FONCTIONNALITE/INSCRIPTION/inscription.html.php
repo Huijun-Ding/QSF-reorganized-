@@ -70,7 +70,7 @@
                         </div>
                             
                         <div class="form-group">
-                              <button type="submit" class="btn btn-dark">S'inscrire</button>
+                              <button type="submit" name="sinscrire" class="btn btn-dark">S'inscrire</button>
                         </div>
             </form>
 
