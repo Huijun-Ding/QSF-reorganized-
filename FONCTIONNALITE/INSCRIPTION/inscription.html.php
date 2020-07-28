@@ -10,7 +10,7 @@
 			
 			<h1> CREER UN COMPTE </h1>
 			
-                        <form method = 'POST' action="AjouterUtilisateurs.php">
+                        <form method = 'POST' action="inscription.fonction.php">
 			  <div class="form-row">
 				<div class="form-group col-md-6">
 				  <label for="inputEmail4">Nom</label>

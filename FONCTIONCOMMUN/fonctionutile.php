@@ -4,10 +4,12 @@
         // 2. Fonction vérification l'existnce d'email       
             
             function is_unique_login($session, $Email){
-                $stmt = mysqli_prepare($session, "SELECT Email from utilisateurs where Email = ?");
-                mysqli_stmt_bind_param($stmt, "s", $Email);
-                mysqli_stmt_execute($stmt);
-                if(mysqli_stmt_fetch($stmt)==TRUE){
+                session_name('CHEMIN');
+                session_start();
+                require_once $_SESSION["APPLICATION"].'/BDD/connexion.bdd.php'; 
+                $bdd = connect();
+                $requete = $bdd->query("SELECT Email from utilisateurs where Email = $Email");
+                if(mysqli_stmt_fetch($requete)==TRUE){
                     return False;
                 } else {
                     return True;
