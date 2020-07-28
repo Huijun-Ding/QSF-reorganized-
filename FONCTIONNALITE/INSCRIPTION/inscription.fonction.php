@@ -13,7 +13,8 @@
 
             $requete = $bdd->query("SELECT MotDePasse FROM utilisateurs WHERE Email= '$Email'");
 
-            $resultat = $requete ->fetch($good_password);
+            //$resultat = $requete ->fetch($good_password);
+            $requete->bindColumn('MotDePasse', $good_password);
             //comment traduire 
             //mysqli_stmt_bind_result($stmt, $good_password);
             //mysqli_stmt_fetch($stmt);
