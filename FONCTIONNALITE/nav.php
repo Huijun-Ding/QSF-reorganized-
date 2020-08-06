@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="http://<?php echo $_SERVER['HTTP_HOST'].$_SESSION['REP_APPLI'];?>/FONCTIONNALITE/ACCUEIL/index.php">Quai des savoir-faire</a> 
+      <a class="navbar-brand" href="http://<?php echo $_SERVER['HTTP_HOST'].$_SESSION['REP_APPLI'];?>/FONCTIONNALITE/ACCUEIL/index.php">Plateforme</a> 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
@@ -53,9 +53,14 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
  <?php                
                 if(isset($_SESSION['email'])){
+                    if(isset($_SESSION['role'])) {
+                        echo ('<a class="dropdown-item" href="Admin.php">Espace admin</a>');
+                        echo ('<a class="dropdown-item" href="Deconnecter.php" onclick="Deconnexion()">Déconnecter</a>');   
+                    } else {
                     echo ('<a class="dropdown-item" href="http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['REP_APPLI'].'/FONCTIONNALITE/MONESPACE/monprofil.html.php">Mon profil</a>');
                     echo ('<a class="dropdown-item" href="http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['REP_APPLI'].'/FONCTIONNALITE/MONESPACE/mescategories.html.php">Mes catégories</a>');
                     echo ('<a class="dropdown-item" href="http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['REP_APPLI'].'/FONCTIONNALITE/INSCRIPTION/deconnexion.php" onclick="Deconnexion()">Déconnecter</a>');
+                    }
  ?>              
                     <script>
                         function Deconnexion() {
