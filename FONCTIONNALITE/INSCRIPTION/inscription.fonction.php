@@ -1,4 +1,5 @@
 <?php
+    require_once $_SESSION["APPLICATION"].'/BDD/utilisateur.bdd.php';
 
     if(isset($_POST['seconnecter'])){
         if(isset($_POST['email'])){
@@ -11,6 +12,7 @@
             $Password = $_POST["password"];
 
             $requete = $bdd->query("SELECT MotDePasse FROM utilisateurs WHERE Email= '$Email'");
+            $requete = $bdd->$query1;
 
             $requete->bindColumn('MotDePasse', $good_password);
       

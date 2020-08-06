@@ -1,5 +1,40 @@
 <?php 
 
+    
+    function un_besoinx() {  //fonction pour afficher les information d'un carte besoin
+        
+          $bdd = connect();
+                   
+          $requete = $bdd->$querybesoin;
+         
+          if ($requete == true) {
+            while ($resultat = $requete ->fetch()) {
+                 if ($resultat["VisibiliteB"] == 1) {                 
+                    echo ('<h1>'.$resultat["TitreB"]. '</h1>');                        
+                    echo ('<h3> Date Butoire: '.$resultat["DateButoireB"].'</h3>');
+                    echo ('<p> Date Publication: '.$resultat["DatePublicationB"].'</p>');
+                    echo ('<p><img src="'.$resultat["PhotoC"].'" class="card-img-top" alt="'.$resultat['NomC'].'" height="200" style="width: 20rem;"</p>');
+                    echo ('<p><strong>Type: </strong>'.$resultat["TypeB"].'</p>');                        
+                    echo ('<p><strong>Description</strong></p><p>'.$resultat["DescriptionB"].'</p>'); 
+                    echo ('<hr>');
+                    
+                    if(isset($_SESSION['email'])){
+                       echo ('<a href="mailbesoin.php?t='.$resultat["TitreB"].'"><button type="button" class="btn btn-dark btn-lg">Contacter</button></a>');
+                    } else {
+                       echo ('<a href="http://'.$_SERVER['HTTP_HOST'].'/'.$_SESSION['REP_APPLI'].'/FONCTIONNALITE/INSCRIPTION/connexion.html.php"><button type="button" class="btn btn-dark btn-lg">Contacter</button></a>');
+                    }   
+                     
+                 }
+            } 
+           } else {
+               echo('<h5> Désolé, ce besoin ne peut pas être affiché. </h5>');   
+           }              
+    }
+
+
+
+
+
    // 1. Tester si l'utilisateur est connecté avant créer un nouveau besoin
 /*
             function login_pour_nouveau_besoin() {

@@ -8,6 +8,7 @@
         <div class="jumbotron">
             <div class="container">
                <?php require_once $_SESSION["APPLICATION"].'/BDD/besoin.bdd.php'; ?>	
+                <?php require_once $_SESSION["APPLICATION"].'/BDD/besoin.fonction.php'; ?>	
                <?php un_besoinx(); //Afficher les informations d'un besoin ?>  
             </div>
         </div>       

@@ -77,7 +77,7 @@
             echo('<h5> Aucun résultat</h5>');
         }  
     }
-    
+    /*
     function un_besoinx() {  //fonction pour afficher les information d'un carte besoin
         
           $bdd = connect();
@@ -107,6 +107,11 @@
                echo('<h5> Désolé, ce besoin ne peut pas être affiché. </h5>');   
            }              
     }
- 
-    
+ */
+       
+        
+         
+          
+          $querybesoin = "select c.NomC, b.TypeB, b.VisibiliteB, b.TitreB, c.PhotoC, b.DatePublicationB, b.DescriptionB, b.DateButoireB from besoins b, categories c where b.CodeC = c.CodeC and b.CodeB = '{$_GET['t']}'";
+
 ?>
