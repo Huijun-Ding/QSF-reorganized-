@@ -7,6 +7,9 @@
 <!--------------------------------------------------------------------------------------------------------------------------------------------->   
         <div class="jumbotron">
           <div class="container">
+               <link rel="stylesheet" type="text/css" href="admin.css">     <!-- css pour les onglets --> 
+               <script src="admin.js"></script>                             <!-- js pour les onglets --> 
+              
                <h1>Admin</h1>        <!-- Bouton pour les onglets --> 
                 <button class="tablink" onclick="openPage('Catégories', this, 'orange')" id="defaultOpen">Catégories</button>   <!-- moteur de recherche : après changer de page ?????-->   
                 <button class="tablink" onclick="openPage('Cartes', this, 'orange')" >Cartes</button>
@@ -86,7 +89,7 @@
                             echo ('<td>');
                              echo ('<div class="btn-group mr-2" role="group" aria-label="First group">');  //Modifier une catégorie
                              echo ('<a href="AdminCategorieModification.php?t='.$ligne["CodeC"].'"><button type="button" class="btn btn-secondary"><img src="https://png.pngtree.com/png-vector/20190927/ourlarge/pngtree-pencil-icon-png-image_1753753.jpg" alt="Modifier" width="30" height="30"></button></a>');
-                             echo ('<form action="AdminCategorieFonction.php" method="POST">');  //Désactiver une catégorie
+                             echo ('<form action="AdminCategorie.fonction.php" method="POST">');  //Désactiver une catégorie
                              echo ('<button name="desactiver" value="'.$ligne["CodeC"].'" type="submit" class="btn btn-secondary"><img src="https://static.vecteezy.com/system/resources/previews/000/630/530/non_2x/trash-can-icon-symbol-illustration-vector.jpg" alt="Supprimer" width="30" height="30"></button>');
                              echo ('</form>');
                              echo ('</div>');
@@ -119,7 +122,7 @@
                             <button type="submit" class="btn btn-outline-dark">Recherche</button>
                         </form>
                     </div>
-                  <form action="AdminCarteInapproprieB.php" method="post">
+                  <form action="AdminCarteInapproprieB.fonction.php" method="post">
                   <?php
                    
                     $query = "select CodeB, TitreB, DescriptionB from besoins where VisibiliteB = 1 order by CodeB DESC";
@@ -154,7 +157,7 @@
                             echo ('<td>'.$ligne["DescriptionB"].'</td>');
                             echo ('<td>');
                              echo ('<div class="btn-group mr-2" role="group" aria-label="First group">');
-                             echo ('<a href="AdminBesoinX.php?t='.$ligne["CodeB"].'"><button type="button" class="btn btn-secondary"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUptTBSZ_MvCJwuSgHbU74zhNGo2FDtMhgvA&usqp=CAU" alt="Détail" width="30" height="30"></button></a>');
+                             echo ('<a href="AdminBesoinX.html.php?t='.$ligne["CodeB"].'"><button type="button" class="btn btn-secondary"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUptTBSZ_MvCJwuSgHbU74zhNGo2FDtMhgvA&usqp=CAU" alt="Détail" width="30" height="30"></button></a>');
                              echo ('<button type="submit" name="desactiverb" value="'.$ligne["CodeB"].'" class="btn btn-secondary"><img src="https://static.vecteezy.com/system/resources/previews/000/630/530/non_2x/trash-can-icon-symbol-illustration-vector.jpg" alt="Désactiver" width="30" height="30"></button>');                            
                              echo ('</div>');
                             echo ('</td>');                        
@@ -198,7 +201,7 @@
                             echo ('<td>'.$ligne["DescriptionB"].'</td>');
                             echo ('<td>');
                              echo ('<div class="btn-group mr-2" role="group" aria-label="First group">');
-                             echo ('<a href="AdminBesoinX.php?t='.$ligne["CodeB"].'"><button type="button" class="btn btn-secondary"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUptTBSZ_MvCJwuSgHbU74zhNGo2FDtMhgvA&usqp=CAU" alt="Détail" width="30" height="30"></button></a>');
+                             echo ('<a href="AdminBesoinX.html.php?t='.$ligne["CodeB"].'"><button type="button" class="btn btn-secondary"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUptTBSZ_MvCJwuSgHbU74zhNGo2FDtMhgvA&usqp=CAU" alt="Détail" width="30" height="30"></button></a>');
                              echo ('<button type="submit" name="activerb" value="'.$ligne["CodeB"].'" class="btn btn-secondary"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS82pYv9wgxfx27dUrgTr8zaGjZ6O3O2CONHA&usqp=CAU" alt="Activer" width="30" height="30"></button>');                                                       
                              echo ('</div>');
                             echo ('</td>');
@@ -221,7 +224,7 @@
                     </form>
                 </div>
                     
-                  <form action="AdminCarteInapproprieT.php" method="post">
+                  <form action="AdminCarteInapproprieT.fonction.php" method="post">
                   <?php
 
                     $query = "select CodeT, TitreT, DescriptionT from talents where VisibiliteT = 1 order by CodeT DESC";
@@ -255,7 +258,7 @@
                             echo ('<td>'.$ligne["DescriptionT"].'</td>');
                             echo ('<td>');
                              echo ('<div class="btn-group mr-2" role="group" aria-label="First group">');
-                             echo ('<a href="AdminTalentX.php?t='.$ligne["CodeT"].'"><button type="button" class="btn btn-secondary"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUptTBSZ_MvCJwuSgHbU74zhNGo2FDtMhgvA&usqp=CAU" alt="Détail" width="30" height="30"></button></a>');
+                             echo ('<a href="AdminTalentX.html.php?t='.$ligne["CodeT"].'"><button type="button" class="btn btn-secondary"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUptTBSZ_MvCJwuSgHbU74zhNGo2FDtMhgvA&usqp=CAU" alt="Détail" width="30" height="30"></button></a>');
                               echo ('<button type="submit" name="desactivert" value="'.$ligne["CodeT"].'" class="btn btn-secondary"><img src="https://static.vecteezy.com/system/resources/previews/000/630/530/non_2x/trash-can-icon-symbol-illustration-vector.jpg" alt="Désactiver" width="30" height="30"></button>');                 
                              echo ('</div>');
                             echo ('</td>');
@@ -298,7 +301,7 @@
                             echo ('<td>'.$ligne["DescriptionT"].'</td>');
                             echo ('<td>');
                              echo ('<div class="btn-group mr-2" role="group" aria-label="First group">');
-                             echo ('<a href="AdminTalentX.php?t='.$ligne["CodeT"].'"><button type="button" class="btn btn-secondary"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUptTBSZ_MvCJwuSgHbU74zhNGo2FDtMhgvA&usqp=CAU" alt="Détail" width="30" height="30"></button></a>');
+                             echo ('<a href="AdminTalentX.html.php?t='.$ligne["CodeT"].'"><button type="button" class="btn btn-secondary"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUptTBSZ_MvCJwuSgHbU74zhNGo2FDtMhgvA&usqp=CAU" alt="Détail" width="30" height="30"></button></a>');
                              echo ('<button type="submit" name="activert" value="'.$ligne["CodeT"].'" class="btn btn-secondary"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS82pYv9wgxfx27dUrgTr8zaGjZ6O3O2CONHA&usqp=CAU" alt="Activer" width="30" height="30"></button>');                    
                              echo ('</div>');
                             echo ('</td>');
@@ -312,70 +315,8 @@
                 </form>
             </div>
 
-            <!-- CSS pour la tab des cartes-->
-            <style>     
-            /* Style the tab */
-            .tab {
-              overflow: hidden;
-              border: 1px solid #ccc;
-              background-color: #f1f1f1;
-            }
 
-            /* Style the buttons that are used to open the tab content */
-            .tab button {
-              background-color: inherit;
-              float: left;
-              border: none;
-              outline: none;
-              cursor: pointer;
-              padding: 14px 16px;
-              transition: 0.3s;
-            }
 
-            /* Change background color of buttons on hover */
-            .tab button:hover {
-              background-color: #ddd;
-            }
-
-            /* Create an active/current tablink class */
-            .tab button.active {
-              background-color: #ccc;
-            }
-
-            /* Style the tab content */
-            .tabcontentc {
-              display: none;
-              padding: 6px 12px;
-              border: 1px solid #ccc;
-              border-top: none;
-            }
-            </style>
-
-            <!-- JS pour la tab des cartes-->
-            <script>
-            function openCity(evt, cityName) {
-              // Declare all variables
-              var i, tabcontentc, tablinksc;
-
-              // Get all elements with class="tabcontent" and hide them
-              tabcontentc = document.getElementsByClassName("tabcontentc");
-              for (i = 0; i < tabcontentc.length; i++) {
-                tabcontentc[i].style.display = "none";
-              }
-
-              // Get all elements with class="tablinks" and remove the class "active"
-              tablinksc = document.getElementsByClassName("tablinksc");
-              for (i = 0; i < tablinksc.length; i++) {
-                tablinksc[i].className = tablinksc[i].className.replace(" active", "");
-              }
-
-              // Show the current tab, and add an "active" class to the button that opened the tab
-              document.getElementById(cityName).style.display = "block";
-              evt.currentTarget.className += " active";
-            }
-            // Get the element with id="defaultOpen" and click on it
-              document.getElementById("defaultOpenc").click();
-            </script>
 
             </div>
 <!--------------------------------------------------------------------------------------------------------------------------------------------->   
@@ -388,7 +329,7 @@
                     </form>
                   </div>
                   <p>Accéder au profil d'utilisateur. Bloquer un compte avec un mail de prévenance (modal : êtes-vous sûr ? comme ne pouvoir pas réactiver un compte). Moteur de recherche dans nom, prénom, email</p>
-                  <form name="Supprimer" action="AdminUtilisateurFonction.php" method="post">
+                  <form name="Supprimer" action="AdminUtilisateur.fonction.php" method="post">
                    <?php
 
                     $query = "select CodeU, NomU, PrenomU, Email from utilisateurs where NomU <> 'XXXXX' order by CodeU DESC";
@@ -424,7 +365,7 @@
                             echo ('<td>'.$ligne["Email"].'</td>');
                             echo ('<td>');
                              echo ('<div class="btn-group mr-2" role="group" aria-label="First group">');
-                             echo ('<a href="AdminUtilisateur.php?t='.$ligne["CodeU"].'"><button type="button" class="btn btn-secondary"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUptTBSZ_MvCJwuSgHbU74zhNGo2FDtMhgvA&usqp=CAU" alt="Détail" width="30" height="30"></button></a>');                 
+                             echo ('<a href="AdminUtilisateur.html.php?t='.$ligne["CodeU"].'"><button type="button" class="btn btn-secondary"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUptTBSZ_MvCJwuSgHbU74zhNGo2FDtMhgvA&usqp=CAU" alt="Détail" width="30" height="30"></button></a>');                 
                              echo ('<button type="button"  class="btn btn-secondary" data-toggle="modal" data-target="#supprimer'.$ligne["CodeU"].'"><img src="https://static.vecteezy.com/system/resources/previews/000/630/530/non_2x/trash-can-icon-symbol-illustration-vector.jpg" alt="Désactiver" width="30" height="30"></button>');    
                              echo ('</div>');
                             echo ('</td>');
@@ -551,14 +492,11 @@
 <!--------------------------------------------------------------------------------------------------------------------------------------------->                  
         <div id="Bandeau" class="tabcontent">
             <h3>Bandeau</h3><hr>
-            
-            <?php
-            require_once('slide.html.php');
-            ?>
+            <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/ACCUEIL/slide.html.php'; ?>
         <br>  
         <h4>Modification</h4><hr>
         
-        <form method="POST" action="AdminBandeaFonction.php">           
+        <form method="POST" action="AdminBandeau.fonction.php">           
             <h5>Premier slide</h5>
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -611,74 +549,11 @@
               <p>Paramétrer le délais d'envoie de mail d’évaluation : <input type='text' placeholder="15"> jours </p>
               <button type="button" class="btn btn-dark"> Changer </button>
             </div>
-
-            <style>
-
-            /* Style tab links */
-            .tablink {
-              background-color: #555;
-              color: white;
-              float: left;
-              border: none;
-              outline: none;
-              cursor: pointer;
-              padding: 14px 16px;
-              font-size: 17px;
-              width: 15%;
-            }
-
-            .tablink:hover {
-              background-color: #777;
-            }
-
-            /* Style the tab content (and add height:100% for full page content) */
-            .tabcontent {
-              color: black;
-              display: none;
-              padding: 100px 20px;
-              height: 100%;
-            }
-
-            </style>
-
-            <script>
-            function openPage(pageName, elmnt, color) {
-            // Hide all elements with class="tabcontent" by default */
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-              tabcontent[i].style.display = "none";
-            }
-
-            // Remove the background color of all tablinks/buttons
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < tablinks.length; i++) {
-              tablinks[i].style.backgroundColor = "";
-            }
-
-            // Show the specific tab content
-            document.getElementById(pageName).style.display = "block";
-
-            // Add the specific color to the button used to open the tab content
-            elmnt.style.backgroundColor = color;
-          }
-
-          // Get the element with id="defaultOpen" and click on it
-          document.getElementById("defaultOpen").click();
-              </script>
 <!---------------------------------------------------------------------------------------------------------------------------------------------> 
       </div>
     </div>
 
-  <hr> 
-  <footer>
-    <p id="copyright"><em><small>copyright &#9400; Quai des savoir-faire, CPAM Haute-Garonne, 2020. All rights reserved.</small></em></p>
-  </footer>
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <hr> 
+    <?php require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/footer.php'; ?>    
 </body>
 </html>

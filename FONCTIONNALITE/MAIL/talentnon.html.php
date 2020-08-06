@@ -7,15 +7,16 @@
 ​
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-​	<link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Quai des savoir-faire</title>
+​    <link href="/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Plateforme</title>
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery.js"></script>
   </head>
   <body>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="Admin.php">Plateforme</a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.php">Plateforme</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -80,48 +81,40 @@
         </ul>
       </div>
     </nav>
-      
-<!--------------------------------------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------------------------------------->  
         <div class="jumbotron">
           <div class="container">
-              <h1>Modifier une catégorie</h1>      
-              <hr>
-              <form action="AdminCategorieFonction.php" method="POST">
+              <h1>Pourquoi ?</h1><hr>
+              <p>Veuillez sélectionner une raison de refuse : </p><br>
+              <form action="talentnon.fonction.php" method="GET">
                   
-               <?php
-                $T = $_GET['t'];
-                $query = "select CodeC, NomC, DescriptionC, PhotoC from categories where CodeC = $T ";
-                $result = mysqli_query ($session, $query);
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="raison_non_talent" id="talent_raison1" value="Je ne suis pas libre" checked>
+                  <label class="form-check-label" for="talent_raison1">
+                    Je ne suis pas libre
+                  </label>
+                </div><br>
                 
-                if ($result == false) {
-                    die("ereur requête : ". mysqli_error($session) );
-                }
-                while ($ligne = mysqli_fetch_array($result)) {                      /* Afficher le détail de chaque besoin */
-    
-                        echo ('<div class="form-group">');
-                        echo ('<label for="inputEmail4">Nom de catégorie</label>');
-                        echo ('<input type="text" name="nomc" class="form-control col-md-4" id="inputEmail4" maxlength="20" value="'.$ligne["NomC"].'" required>');
-                        echo ('</div>');
-                        
-                        echo('<div class="form-group">') ;
-                        echo('<label for="inputEmail4">Description de catégorie</label><br/>') ;
-                        echo('<textarea rows="4" cols="50" name="descriptionc" required>'.$ligne["DescriptionC"].'</textarea>') ;
-                        echo('</div>') ;
-                        
-                        echo('<div class="form-group">') ;
-                        echo('<label for="inputEmail4">URL de photo</label><br/>') ;
-                        echo('<textarea rows="4" cols="50" name="photoc" required>'.$ligne["PhotoC"].'</textarea>') ;
-                        echo('</div>') ;
-       
-                     echo('<hr>');
-                     echo('<div class="form-group">');
-                        echo('<button name="modifier" type="submit" value="'.$ligne["CodeC"].'" class="btn btn-dark btn-lg">MODIFIER</button>');
-                     echo('</div>');
-                }
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="raison_non_talent" id="talent_raison2" value="Je serais disponible à partir du ">
+                  <label class="form-check-label" for="talent_raison2">
+                    Je serais disponible à partir du   
+                  </label>
+                  <input type="date" name="datedispo">
+                </div><br>  
 
-                 ?> 
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="raison_non_talent" id="talent_raison3" value="">
+                  <label class="form-check-label" for="talent_raison3">
+                    Autre raison (veuillez préciser) 
+                  </label><br>
+                  <textarea name="autre_raison" rows="4" cols="50"></textarea>
+                </div><br>
+                
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+                
               </form>
-
+              <hr>      
           </div>
         </div>
 
