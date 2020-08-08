@@ -8,7 +8,6 @@
         <div class="jumbotron">
           <div class="container">
 	    <?php require_once $_SESSION["APPLICATION"].'/BDD/besoin.bdd.php'; ?>	
-            <?php //require_once $_SESSION["APPLICATION"].'/FONCTIONNALITE/BESOIN/besoin.fonction.php'; ?>
             <div class="flex-parent d-flex justify-content-md-between bd-highlight mb-2">
               <h1>LES BESOINS </h1>         
               <?php //login_pour_nouveau_besoin(); ?>
@@ -34,8 +33,8 @@
                       <div class="modal-body">
                          <h3> Par catégorie </h3>                      
                            <?php
-                             require_once('Fonctions.php');
-                             $query = "select CodeC, NomC from categories where VisibiliteC = 1";
+                             $bdd = connect();
+                             $requete = $bdd->query("select CodeC, NomC from categories where VisibiliteC = 1");
                              $result = mysqli_query ($session, $query);
                              if (mysqli_num_rows($result)>0) {       
                                 while ($ligne = mysqli_fetch_array($result)) { 

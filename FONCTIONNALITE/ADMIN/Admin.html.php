@@ -57,7 +57,7 @@
                   </form>
                   
                    <?php
-                    require_once('Fonctions.php');
+                    $bdd = connect();
 
                     $query = "select CodeC, NomC, DescriptionC, PhotoC, VisibiliteC from categories";
 
