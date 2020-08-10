@@ -1,5 +1,5 @@
 <?php
-session_name('CHEMIN');
+//session_name('CHEMIN');
 session_start();
 define("REP_APPLI","/QSF-reorganized-");
 $_SESSION["REP_APPLI"] = REP_APPLI;
@@ -27,7 +27,7 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
                     <a href="https://notmoebius.github.io/quaidessavoirfaire/" target="_blank"><button type="button" class="btn btn-outline-dark">En savoir plus</button></a>
                 </p>
              <?php
-             require_once $_SESSION["APPLICATION"].'/FONCTIONCOMMUN/fonctionutile.php';
+             //require_once $_SESSION["APPLICATION"].'/FONCTIONCOMMUN/fonctionutile.php';
             
             if(isset($_SESSION['email'])){  //arbre aide à la décision pour découvrir les talents
                 echo('<a href="https://eva.beta.gouv.fr/"><img src="https://i.pinimg.com/474x/81/c4/39/81c43990273687ad0218db03ed667d26.jpg" class="rounded-circle" alt="Bonhomme talent"></a>');

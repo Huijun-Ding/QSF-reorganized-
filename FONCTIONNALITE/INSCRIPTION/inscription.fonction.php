@@ -1,44 +1,44 @@
 <?php
-    require_once $_SESSION["APPLICATION"].'/BDD/utilisateur.bdd.php';
 
-    if(isset($_POST['seconnecter'])){
+    //require_once $_SESSION["APPLICATION"].'/BDD/utilisateur.bdd.php';
+
+    if(isset($_POST['seconnecter'])){   //Un utilisateur qui se connecte
         if(isset($_POST['email'])){
             //session_name('CHEMIN');
             session_start();
             require_once $_SESSION["APPLICATION"].'/BDD/connexion.bdd.php'; 
             $bdd = connect();
+            
+            $requete = $bdd->query("SELECT MotDePasse FROM utilisateurs WHERE Email= '{$_POST['email']}'");
 
-            $Email = $_POST['email'];
-            $Password = $_POST["password"];
-
-            $requete = $bdd->query("SELECT MotDePasse FROM utilisateurs WHERE Email= '$Email'");
-            $requete = $bdd->$query1;
-
-            $requete->bindColumn('MotDePasse', $good_password);
-      
-            if(password_verify($Password,$good_password)) {    // si le mot de passe est bon, ouvert la session ???
+            //$requete->bindParam('MotDePasse', $good_password);
+            
+             while ($resultat = $requete ->fetch()) {
+                  if(password_verify($_POST["password"],$resultat["MotDePasse"])) {    // si le mot de passe est bon, ouvert la session ???
 
                 //session_name('UTILISATEUR');
                 session_start();
 
-                    $_SESSION['email'] = $Email;
-                    $_SESSION['password'] = $Password;
+                    $_SESSION['email'] = $_POST['email'];
+                    $_SESSION['password'] = $_POST["password"];
 
                 header('Location: '.$_SESSION['APPLICATION'].'/FONCTIONNALITE/ACCUEIL/index.php');
-          
-                } else {
+            } else {
                       ?>
                 <script type="text/javascript">
                     alert("Mauvais Email / mot de passe ! \n Veuillez réessayer. ");
-                    //document.location.href = 'connexion.html.php';
+                    document.location.href = 'connexion.html.php';
                 </script>
                 <?php
-                }       
-        }
-    }
+            }    
+             }
 
-    if(isset($_POST['sinscrire'])){  
-        if(isset($_POST['email'])){                                 //Ajouter le nouveau utilisateur dans la base de donnée
+        }
+        }
+    
+
+    if(isset($_POST['sinscrire'])){   //Ajouter un nouveau utilisateur dans la base de donnée
+        if(isset($_POST['email'])){                                 
             session_name('CHEMIN');
             session_start();
             require_once $_SESSION["APPLICATION"].'/BDD/connexion.bdd.php'; 

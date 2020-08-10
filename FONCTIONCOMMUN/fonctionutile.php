@@ -4,7 +4,7 @@
         // 2. Fonction vérification l'existnce d'email       
             
             function is_unique_login($session, $Email){
-                session_name('CHEMIN');
+                //session_name('CHEMIN');
                 session_start();
                 require_once $_SESSION["APPLICATION"].'/BDD/connexion.bdd.php'; 
                 $bdd = connect();
