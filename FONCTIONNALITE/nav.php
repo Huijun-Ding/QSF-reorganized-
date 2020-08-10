@@ -22,7 +22,7 @@
         
           <form  method="get">
 <?php          
-           require_once $_SESSION["APPLICATION"].'/FONCTIONCOMMUN/fonctionutile.php';
+           //require_once $_SESSION["APPLICATION"].'/FONCTIONCOMMUN/fonctionutile.php';
          
            
             if (empty($_SESSION['email'])){

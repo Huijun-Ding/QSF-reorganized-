@@ -71,7 +71,7 @@ $_SESSION["APPLICATION"] = $_SERVER['DOCUMENT_ROOT'].REP_APPLI;
                     <input class="form-control mr-sm-2" type="search"  name="motT" placeholder="Animation/BI/..." aria-label="Search">
                     <button type="submit" class="btn btn-outline-dark">Recherche</button>
               </form> 
-              <?php is_login_new_talent(); ?>
+              <?php //is_login_new_talent(); ?>
             </div>
             <!-- L'affichage pour les cartes talents-->
             <div id="cartesT" class="flex-parent d-flex flex-wrap justify-content-around mt-3">
